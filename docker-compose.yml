@@ -1,32 +1,32 @@
 version: "4"
 
 services:
-  lucy-bot:
-    image: lrmn7/lucy
+  discord-js-bot:
+    image: lrmn/lucy:5.4.0
     container_name: lucy
     restart: unless-stopped
     networks:
-      - lucy-net
+      - discord-js-net
     volumes:
       - ./config.js:/usr/src/app/config.js:ro
       - ./logs:/usr/src/app/logs:rw
 
   lavalink:
     image: fredboat/lavalink:dev
-    container_name: lucy-lavalink
+    container_name: discord-js-lavalink
     hostname: lavalink
     restart: unless-stopped
     networks:
-      - lucy-net
+      - discord-js-net
     volumes:
       - ./application.yml:/opt/Lavalink/application.yml:ro
 
   mongodb:
     image: mongo:latest
-    container_name: lucy-mongodb
+    container_name: discord-js-mongodb
     restart: unless-stopped
     networks:
-      - lucy-net
+      - discord-js-net
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=supersecretpassword
@@ -34,5 +34,5 @@ services:
       - ./data:/data/db:rw
 
 networks:
-  lucy-net:
-    name: lucy-net
+  discord-js-net:
+    name: discord-js-net

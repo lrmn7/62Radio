@@ -29,7 +29,7 @@ Hi, my name is Lucy. I’m always online
 - 🌌 Dashboard: [Dashboard](https://lucy.hop.sh/selector)
 - 🤖 Demo Bot: [Invite Here](https://discord.com/api/oauth2/authorize?client_id=928966154817523723&permissions=8&scope=bot%20applications.commands)
 - 🤝 Support Server: [Join Here](https://discord.gg/WFfjrQxnfH)
-- 📂 Documentation URL: [Visit Here](https://lrmn.gitbook.io/lucy/)
+- 📂 Documentation URL: [Visit Here](https://lucy-docs.is-a.fun)
 - 🐳 Docker Image: [Hub](https://hub.docker.com/r/hai-lucy/lucy)
 - 🚀 Hoosted: [Hop.io](https://hop.io)
 
