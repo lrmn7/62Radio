@@ -38,7 +38,7 @@ module.exports = {
   DASHBOARD: {
     enabled: true, // enable or disable dashboard
     baseURL: "https://lucy.hop.sh", // base url
-    failureURL: "https://lucy.hop.sh/selector", // failure redirect url
+    failureURL: "https://lucy.hop.sh/", // failure redirect url
     port: "8080", // port to run the bot on
   },
 
