@@ -1,0 +1,38 @@
+version: "4"
+
+services:
+  lucy-bot:
+    image: lrmn7/lucy
+    container_name: lucy
+    restart: unless-stopped
+    networks:
+      - lucy-net
+    volumes:
+      - ./config.js:/usr/src/app/config.js:ro
+      - ./logs:/usr/src/app/logs:rw
+
+  lavalink:
+    image: fredboat/lavalink:dev
+    container_name: lucy-lavalink
+    hostname: lavalink
+    restart: unless-stopped
+    networks:
+      - lucy-net
+    volumes:
+      - ./application.yml:/opt/Lavalink/application.yml:ro
+
+  mongodb:
+    image: mongo:latest
+    container_name: lucy-mongodb
+    restart: unless-stopped
+    networks:
+      - lucy-net
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=supersecretpassword
+    volumes:
+      - ./data:/data/db:rw
+
+networks:
+  lucy-net:
+    name: lucy-net
