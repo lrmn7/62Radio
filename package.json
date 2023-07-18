@@ -1,9 +1,9 @@
 {
   "name": "Lucy",
   "version": "5.4.0",
-  "description": "An open-source, multipurpose discord bot built using discord-js",
+  "description": "Hi, my name is Lucy. I’m always online, An open-source, multipurpose discord bot built using discord-js",
   "main": "bot.js",
-  "author": "Sai Teja M",
+  "author": "L RMN",
   "license": "ISC",
   "engines": {
     "node": ">=16.11.0"
@@ -12,7 +12,7 @@
     "dev": "nodemon .",
     "start": "node .",
     "format": "prettier --write src",
-    "docker:build": "docker build -t saitejamadha/Lucy:5.4.0 ."
+    "docker:build": "docker build -t lrmn/Lucy:5.4.0 ."
   },
   "homepage": "https://github.com/Hai-Lucy/Lucy#readme",
   "repository": {
