@@ -1,5 +1,5 @@
 {
-  "name": "discord-js-bot",
+  "name": "Lucy",
   "version": "5.4.0",
   "description": "An open-source, multipurpose discord bot built using discord-js",
   "main": "bot.js",
@@ -12,15 +12,15 @@
     "dev": "nodemon .",
     "start": "node .",
     "format": "prettier --write src",
-    "docker:build": "docker build -t saitejamadha/discord-js-bot:5.4.0 ."
+    "docker:build": "docker build -t saitejamadha/Lucy:5.4.0 ."
   },
-  "homepage": "https://github.com/saiteja-madha/discord-js-bot#readme",
+  "homepage": "https://github.com/Hai-Lucy/Lucy#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saiteja-madha/discord-js-bot.git"
+    "url": "git+https://github.com/Hai-Lucy/Lucy.git"
   },
   "bugs": {
-    "url": "https://github.com/saiteja-madha/discord-js-bot/issues"
+    "url": "https://github.com/Hai-Lucy/Lucy/issues"
   },
   "dependencies": {
     "@lavaclient/queue": "^2.1.1",
