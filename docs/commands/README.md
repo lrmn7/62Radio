@@ -26,7 +26,7 @@
 
 ## 🔗 Resource Links
 
-- 🌌 Dashboard: [Dashboard](https://halucy.hop.sh/selector)
+- 🌌 Dashboard: [Dashboard](https://lucy.hop.sh/selector)
 - 🤖 Demo Bot: [Invite Here](https://discord.com/api/oauth2/authorize?client_id=928966154817523723&permissions=8&scope=bot%20applications.commands)
 - 🤝 Support Server: [Join Here](https://discord.gg/WFfjrQxnfH)
 - 📂 Documentation: [Visit Here](https://lrmn.gitbook.io/lucy/)
