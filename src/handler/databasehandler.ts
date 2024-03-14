@@ -3,10 +3,10 @@ import { configDotenv } from "dotenv";
 import * as mongoose from "mongoose";
 configDotenv();
 async function connectToDB(client: Client) {
-  const uri = process.env.DATABASE_URI;
+  const uri = process.env.MONGODB_URI;
   if (!uri) {
     console.error(
-      "DATABASE_URI not provided. Unable to connect to the database.",
+      "MONGODB_URI not provided. Unable to connect to the database.",
     );
     return;
   }
