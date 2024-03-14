@@ -1,9 +1,9 @@
-# Mew's Radio
+# 62 Radio
 ![bot logo](/assets/mewradio.png)
 <br />
 **Sebuah bot radio Discord yang dibuat menggunakan discord.js.**
 <br />
-**Mew's Radio dapat memutar musik dari berbagai stasiun radio resmi dari seluruh dunia ke saluran suara Discord!**
+**62 Radio dapat memutar musik dari berbagai stasiun radio resmi dari seluruh dunia ke saluran suara Discord!**
 <br />
 <br />
 
@@ -37,6 +37,6 @@
 ![stream setup 4](/assets/4.png)
 <br />
 **Kontrol sekarang ditampilkan di dalam saluran yang sebelumnya ditentukan.**
-*Mew's Radio sekarang melakukan streaming stasiun, jika koneksi internet memungkinkan.*
+*62 Radio sekarang melakukan streaming stasiun, jika koneksi internet memungkinkan.*
 <br />
 <br />
