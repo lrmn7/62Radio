@@ -1,7 +1,7 @@
 {
   "name": "62radio",
   "version": "1.0.0",
-  "description": "A Discord music bot stream radio stations.",
+  "description": "A Discord music bot stream radio stations on the world",
   "main": "app.js",
   "scripts": {
     "start": "node dist/app.js",
