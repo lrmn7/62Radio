@@ -80,7 +80,7 @@ async function updatePresence() {
         { name: randomName, type: 1, url: "https://www.youtube.com/watch?v=cpKL1AXaiFc" },
       ],
     });
-  }, 20000);
+  }, 10000);
 }
 
 
