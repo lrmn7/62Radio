@@ -1,11 +1,20 @@
-# 62 Radio
-![bot logo](/assets/mewradio.png)
 <br />
-**Sebuah bot radio Discord yang dibuat menggunakan discord.js.**
-<br />
-**62 Radio dapat memutar musik dari berbagai stasiun radio resmi dari seluruh dunia ke saluran suara Discord!**
-<br />
-<br />
+<p align="center">
+  <a href="https://discord.gg/6EXgrmtkPX">
+    <img src="https://cdn.is-a.fun/bot/mewwme/mehelp.png" alt="Mewwme" >
+  </a>
+
+  <h1 align="center">62 Radio</h1>
+
+  <p align="center">62 Radio dapat memutar musik dari berbagai stasiun radio resmi dari seluruh dunia ke saluran suara Discord!
+    <br />
+    <br />
+    <a href="https://github.com/lrmn7/helpdesk/issues">Report Issues & Give Suggestions</a>
+    ·
+    <a href="https://discord.com/oauth2/authorize?client_id=928711702596423740&permissions=8&scope=bot+applications.commands">Invite</a>
+    ·
+    <a href="https://discord.gg/6EXgrmtkPX">Support Server</a>
+  </p>
 
 ## Cara pengaturan
 **Gunakan ``/controls`` untuk menetapkan saluran untuk menampilkan kontrol.**
