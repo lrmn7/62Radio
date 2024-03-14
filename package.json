@@ -15,7 +15,7 @@
     "url": "git+https://github.com/mewwme/mews-radio.git"
   },
   "author": "lrmn7",
-  "license": "AGPL-3.0-or-later",
+  "license": "Apache-2.0",
   "dependencies": {
     "@discordjs/opus": "^0.9.0",
     "@discordjs/voice": "^0.16.0",
