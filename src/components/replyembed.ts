@@ -15,9 +15,7 @@ function build(options: BuildOptions): EmbedBuilder {
   const embed = new EmbedBuilder();
   embed.setDescription(options.message || null);
   embed.setTitle(options.title || null);
-  embed.setColor(
-    options.color ? options.color : options.isError ? "DarkRed" : "DarkerGrey",
-  );
+  embed.setColor('#FFFF00'); // Default to yellow if no color specified
   embed.setImage(options.imageURL || null);
   embed.setThumbnail(options.thumbnailURL || null);
   if (options.timestamp) embed.setTimestamp();

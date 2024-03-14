@@ -42,7 +42,7 @@ async function execute(
     new ButtonBuilder({
       label: `Vote`,
       style: ButtonStyle.Link,
-      url: "https://top.gg/user/361407102650109952",
+      url: "https://top.gg/bot/1090120136167538748/vote",
     }),
   );
 
@@ -52,7 +52,7 @@ async function execute(
         title: `About ${client.user?.username}`,
         message: `**${client.user?.username} is a Discord radio bot that brings official radio stations from around the world into your voice channels.**
     **How to Use:**
-    - Type \`/stream\` to play a radio station in your voice channel.\n- Type \`/control\` to display the controls in the specified channel.\n- Type \`/disclaimers\` for important disclaimers!\nFeel free to explore the features and enjoy the music! If you need assistance, join our [Support Server](https://discord.gg/6EXgrmtkPX).`,
+    - Type </stream:1217855267975331953> to play a radio station in your voice channel.\n- Type </controls:1217855267501244469> to display the controls in the specified channel.\n- Type </disclaimers:1217855267975331952> for important disclaimers!\nFeel free to explore the features and enjoy the music! If you need assistance, join our [Support Server](https://discord.gg/6EXgrmtkPX).`,
       }),
     ],
     components: [actionRowBuilder],
