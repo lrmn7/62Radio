@@ -49,7 +49,7 @@ async function execute(
   await interaction.reply({
     embeds: [
       ReplyEmbed.build({
-        title: `About ${client.user?.username}`,
+        title: `About of ${client.user?.username}`,
         message: `**${client.user?.username} is a Discord radio bot that brings official radio stations from around the world into your voice channels.**
     **How to Use:**
     - Type </stream:1217855267975331953> to play a radio station in your voice channel.\n- Type </controls:1217855267501244469> to display the controls in the specified channel.\n- Type </disclaimers:1217855267975331952> for important disclaimers!\nFeel free to explore the features and enjoy the music! If you need assistance, join our [Support Server](https://discord.gg/6EXgrmtkPX).`,

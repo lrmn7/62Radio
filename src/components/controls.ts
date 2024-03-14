@@ -46,9 +46,9 @@ type ControlsState = "playing" | "paused" | "stopped";
 function resetEmbed(embed: EmbedBuilder) {
   embed.setTitle(null);
   embed.setDescription(
-    "I am currently not streaming a station\nUse ``/stream`` to start streaming!",
+    "I am currently not streaming a station\nUse </stream:1217855267975331953> to start streaming!",
   );
-  embed.setColor("DarkRed");
+  embed.setColor("#FFFF00");
   embed.setThumbnail(null);
   embed.setImage(null);
   embed.setFooter(null);
@@ -115,7 +115,7 @@ async function update(
       .replace("..", ""),
   );
   embed.setFooter({ text: "ID: " + nowPlaying.station_id });
-  embed.setColor(controlsState === "playing" ? "Green" : "DarkerGrey");
+  embed.setColor(controlsState === "playing" ? "#FFFF00" : "#FFFF00");
   embed.setImage(nowPlaying.region_image || null);
 
   nowPlayingMap.set(guildId, nowPlaying);
