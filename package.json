@@ -1,5 +1,5 @@
 {
-  "name": "mews-radio",
+  "name": "62radio",
   "version": "1.0.0",
   "description": "A Discord music bot stream radio stations.",
   "main": "app.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mewwme/mews-radio.git"
+    "url": "git+https://github.com/lrmn7/62radio.git"
   },
   "author": "lrmn7",
   "license": "Apache-2.0",
