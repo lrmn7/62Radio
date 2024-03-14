@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://discord.gg/6EXgrmtkPX">
-    <img src="https://cdn.is-a.fun/bot/mewwme/mehelp.png" alt="Mewwme" >
+    <img src="https://avatars.githubusercontent.com/u/144584528?s=200&v=4" alt="62radio" >
   </a>
 
   <h1 align="center">62 Radio</h1>
@@ -9,9 +9,9 @@
   <p align="center">62 Radio dapat memutar musik dari berbagai stasiun radio resmi dari seluruh dunia ke saluran suara Discord!
     <br />
     <br />
-    <a href="https://github.com/lrmn7/helpdesk/issues">Report Issues & Give Suggestions</a>
+    <a href="https://github.com/lrmn7/62radio/issues">Report Issues & Give Suggestions</a>
     ·
-    <a href="https://discord.com/oauth2/authorize?client_id=928711702596423740&permissions=8&scope=bot+applications.commands">Invite</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1090120136167538748&permissions=8&scope=bot+applications.commands">Invite</a>
     ·
     <a href="https://discord.gg/6EXgrmtkPX">Support Server</a>
   </p>
