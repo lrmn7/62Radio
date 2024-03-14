@@ -20,7 +20,7 @@ async function execute(
   interaction.reply({
     embeds: [
       ReplyEmbed.build({
-        color: "Red",
+        color: "#FFFF00",
         title: "DISCLAIMER!",
         message:
           "With the use of this bot you automatically agree that the developer of this bot is not responsible for any damage done to non NSFW channels or copyright rights.\nThe music is streamed from official radio stations around the world and the developer has no effect on what is streamed!",

@@ -547,7 +547,7 @@ async function execute(
         embeds: [
           ReplyEmbed.build({
             title: "There are currently no controls on display!",
-            message: "Have you tried ``/controls`` yet?",
+            message: "Have you tried </controls:1217855267501244469> yet?",
             isError: true,
           }),
         ],

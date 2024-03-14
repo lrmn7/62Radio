@@ -15,11 +15,11 @@ import fetchhandler from "../handler/fetchhandler";
 
 const command = new SlashCommandBuilder()
   .setName("updatedb")
-  .setDescription("Update the database")
+  .setDescription("Update the database radio stations")
   .addStringOption((option) =>
     option
       .setName("countryname")
-      .setDescription("Enter the name of the country")
+      .setDescription("The name of the country (e.g. Indonesia)")
       .setRequired(true),
   )
   .addStringOption((option) =>
