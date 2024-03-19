@@ -46,7 +46,7 @@ type ControlsState = "playing" | "paused" | "stopped";
 function resetEmbed(embed: EmbedBuilder) {
   embed.setTitle(null);
   embed.setDescription(
-    "I am currently not streaming a station\nUse </stream:1217855267975331953> to start streaming!",
+    "I am currently not streaming a station\nUse </stream:1219608148109819971> to start streaming!",
   );
   embed.setColor("#FFFF00");
   embed.setThumbnail(null);

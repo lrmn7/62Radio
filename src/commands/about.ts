@@ -46,22 +46,13 @@ async function execute(
     }),
   );
 
-    // Hosted by HIDDEN CATFEIN
-    actionRowBuilder.addComponents(
-      new ButtonBuilder({
-        label: `Hidden Catfein`,
-        style: ButtonStyle.Link,
-        url: "https://discord.gg/ukzcq2HR7z",
-      }),
-    );
-
   await interaction.reply({
     embeds: [
       ReplyEmbed.build({
         title: `About of ${client.user?.username}`,
         message: `**${client.user?.username} is a Discord radio bot that brings official radio stations from around the world into your voice channels.**
     **How to Use:**
-    - Type </stream:1217855267975331953> to play a radio station in your voice channel.\n- Type </updatedb:1217855267975331954> to add new stations.\n- Type </controls:1217855267501244469> to display the controls in the specified channel.\n- Type </disclaimers:1217855267975331952> for important disclaimers!\nFeel free to explore the features and enjoy the music! If you need assistance, join our [Support Server](https://discord.gg/6EXgrmtkPX).`,
+    - Type </stream:1219608148109819971> to play a radio station in your voice channel.\n- Type </updatedb:1219608148596363284> to add new stations.\n- Type </controls:1219608148109819967> to display the controls in the specified channel.\n- Type </disclaimers:1219608148109819970> for important disclaimers!\nFeel free to explore the features and enjoy the music! If you need assistance, join our [Support Server](https://discord.gg/6EXgrmtkPX).`,
       }),
     ],
     components: [actionRowBuilder],

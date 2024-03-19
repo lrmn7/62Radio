@@ -144,7 +144,7 @@ async function execute(
           embeds: [
             ReplyEmbed.build({
               title: "There are currently no controls on display!",
-              message: "Have you tried </controls:1217855267501244469> yet?",
+              message: "Have you tried </controls:1219608148109819967> yet?",
               isError: true,
             }),
           ],
@@ -547,7 +547,7 @@ async function execute(
         embeds: [
           ReplyEmbed.build({
             title: "There are currently no controls on display!",
-            message: "Have you tried </controls:1217855267501244469> yet?",
+            message: "Have you tried </controls:1219608148109819967> yet?",
             isError: true,
           }),
         ],
