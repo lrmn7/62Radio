@@ -98,7 +98,7 @@ function play(guildId: string, resourceString: string): boolean {
   if (!playerMap.has(guildId)) {
     addAudioPlayer(guildId);
     console.log(
-      `Bot has joined the voice channel in guild ${guild?.name} / ${guildId}`,
+      `Player Created in @ ${guild?.name} / ${guildId}`,
     );
   }
 
