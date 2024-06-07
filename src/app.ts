@@ -3,7 +3,8 @@ import {
   REST,
   GatewayIntentBits,
   Routes,
-  ActivityType,
+  EmbedBuilder,
+  TextChannel
 } from "discord.js";
 import { config } from "dotenv";
 
@@ -25,6 +26,7 @@ config({ path: "../.env" });
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN || "";
 const DISCORD_BOT_CLIENT_ID = process.env.DISCORD_BOT_CLIENT_ID || "";
 const DISCORD_GUILD_ID = process.env.DISCORD_GUILD_ID || "";
+const CHANNEL_LOGS_ID = process.env.CHANNEL_LOGS_ID || "";
 
 console.log();
 
@@ -104,4 +106,106 @@ client.on("messageCreate", async (message) => {
   await message.delete();
 });
 
+
+client.on("guildCreate", async (guild) => {
+  try {
+    if (!CHANNEL_LOGS_ID) return;
+      const eventChannel = await client.channels.fetch(
+        CHANNEL_LOGS_ID
+      );
+      if (!eventChannel || !eventChannel.isTextBased()) return;
+      const owner = await client.users.fetch(guild.ownerId);
+
+    const embed = new EmbedBuilder()
+      .setColor("Yellow")
+      .setAuthor({
+        name: `📥 Joined a Guild!`,
+      })
+      .setThumbnail(guild.iconURL({ extension: "jpeg" }))
+      .addFields(
+        {
+          name: "Guild Name",
+          value: `${guild.name} \n ${guild.id}`,
+          inline: true,
+        },
+        { name: "Owner", value: owner.displayName, inline: true },
+        { name: "Members", value: guild.memberCount.toString(), inline: true },
+        {
+          name: "Created At",
+          value: `<t:${Math.floor(guild.createdTimestamp / 1000)}:F>`,
+          inline: true,
+        },
+        {
+          name: "Joined At",
+          value: `<t:${Math.floor(guild.joinedTimestamp / 1000)}:F>`,
+          inline: true,
+        },
+        {
+          name: `Current Server`,
+          value: `\`${client.guilds.cache.size}\` Servers`,
+          inline: true,
+        },
+      )
+      .setTimestamp();
+      const channel = eventChannel as TextChannel;
+      await channel.send({ embeds: [embed] });
+      console.log(
+        `Sent join message to event channel for guild ${guild.name}`
+      );
+  } catch (error) {
+    console.error("Error handling guildCreate event:", error);
+  }
+});
+
+client.on("guildDelete", async (guild) => {
+  try {
+    if (!CHANNEL_LOGS_ID) return;
+      const eventChannel = await client.channels.fetch(
+        CHANNEL_LOGS_ID
+      );
+      if (!eventChannel || !eventChannel.isTextBased()) return;
+      const owner = await client.users.fetch(guild.ownerId);
+
+    const embed = new EmbedBuilder()
+      .setColor("Yellow")
+      .setAuthor({
+        name: `📥 Left a Guild!`,
+      })
+      .setThumbnail(guild.iconURL({ extension: "jpeg" }))
+      .addFields(
+        {
+          name: "Guild Name",
+          value: `${guild.name} \n ${guild.id}`,
+          inline: true,
+        },
+        { name: "Owner", value: owner.displayName, inline: true },
+        { name: "Members", value: guild.memberCount.toString(), inline: true },
+        {
+          name: "Created At",
+          value: `<t:${Math.floor(guild.createdTimestamp / 1000)}:F>`,
+          inline: true,
+        },
+        {
+          name: "Joined At",
+          value: `<t:${Math.floor(guild.joinedTimestamp / 1000)}:F>`,
+          inline: true,
+        },
+        {
+          name: `Current Server`,
+          value: `\`${client.guilds.cache.size}\` Servers`,
+          inline: true,
+        },
+      )
+      .setTimestamp();
+      const channel = eventChannel as TextChannel;
+      await channel.send({ embeds: [embed] });
+      console.log(
+        `Sent leave message to event channel for guild ${guild.name}`
+      );
+  } catch (error) {
+    console.error("Error handling guildCreate event:", error);
+  }
+});
+
 main();
+

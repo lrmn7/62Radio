@@ -132,7 +132,7 @@ yarn.lock
 mewwme.database.json
 madebytragic.database.json
 .mewwme/
-
+package-lock.json
 .env
 
 .clinic
