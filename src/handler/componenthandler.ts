@@ -64,7 +64,8 @@ async function handle(client: Client, interaction: Interaction) {
             embeds: [
               ReplyEmbed.build({
                 title: "There's no station selected yet!",
-                message: "Issue </stream:1219608148109819971> to start streaming!",
+                message:
+                  "Issue </stream:1219608148109819971> to start streaming!",
                 isError: true,
               }),
             ],

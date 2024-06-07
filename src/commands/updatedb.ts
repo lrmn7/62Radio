@@ -25,9 +25,7 @@ const command = new SlashCommandBuilder()
   .addStringOption((option) =>
     option
       .setName("isocode")
-      .setDescription(
-        "Enter the ISO Code of the country (e.g. ID, US, GB, CA)",
-      )
+      .setDescription("Enter the ISO Code of the country (e.g. ID, US, GB, CA)")
       .setRequired(true),
   )
   .addStringOption((option) =>
@@ -160,7 +158,8 @@ async function execute(
       embeds: [
         ReplyEmbed.build({
           title: `${flag}  ${countryName?.toUpperCase()}, ${isoCode.toUpperCase()}`,
-          message: "Oops, an error occurred!\nIf the issue persists, please visit our [support server](https://discord.gg/6EXgrmtkPX) to report the problem.",
+          message:
+            "Oops, an error occurred!\nIf the issue persists, please visit our [support server](https://discord.gg/6EXgrmtkPX) to report the problem.",
           isError: true,
         }),
       ],

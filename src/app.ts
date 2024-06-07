@@ -4,10 +4,10 @@ import {
   GatewayIntentBits,
   Routes,
   EmbedBuilder,
-  TextChannel
+  TextChannel,
 } from "discord.js";
 import { config } from "dotenv";
-import audioHandler from './handler/audiohandler';
+import audioHandler from "./handler/audiohandler";
 console.log("Loading database handler...");
 import DatabaseHandler from "./handler/databasehandler";
 
@@ -79,12 +79,15 @@ async function updatePresence() {
     client.user?.setPresence({
       status: "idle",
       activities: [
-        { name: randomName, type: 1, url: "https://www.youtube.com/watch?v=cpKL1AXaiFc" },
+        {
+          name: randomName,
+          type: 1,
+          url: "https://www.youtube.com/watch?v=cpKL1AXaiFc",
+        },
       ],
     });
   }, 10000);
 }
-
 
 client.on("ready", (client) => {
   console.log(`\x1b[32m${client.user.tag} is now running!\x1b[0m\n`);
@@ -106,15 +109,12 @@ client.on("messageCreate", async (message) => {
   await message.delete();
 });
 
-
 client.on("guildCreate", async (guild) => {
   try {
     if (!CHANNEL_LOGS_ID) return;
-      const eventChannel = await client.channels.fetch(
-        CHANNEL_LOGS_ID
-      );
-      if (!eventChannel || !eventChannel.isTextBased()) return;
-      const owner = await client.users.fetch(guild.ownerId);
+    const eventChannel = await client.channels.fetch(CHANNEL_LOGS_ID);
+    if (!eventChannel || !eventChannel.isTextBased()) return;
+    const owner = await client.users.fetch(guild.ownerId);
 
     const embed = new EmbedBuilder()
       .setColor("Yellow")
@@ -147,11 +147,9 @@ client.on("guildCreate", async (guild) => {
         },
       )
       .setTimestamp();
-      const channel = eventChannel as TextChannel;
-      await channel.send({ embeds: [embed] });
-      console.log(
-        `Sent join message to event channel for guild ${guild.name}`
-      );
+    const channel = eventChannel as TextChannel;
+    await channel.send({ embeds: [embed] });
+    console.log(`Sent join message to event channel for guild ${guild.name}`);
   } catch (error) {
     console.error("Error handling guildCreate event:", error);
   }
@@ -160,11 +158,9 @@ client.on("guildCreate", async (guild) => {
 client.on("guildDelete", async (guild) => {
   try {
     if (!CHANNEL_LOGS_ID) return;
-      const eventChannel = await client.channels.fetch(
-        CHANNEL_LOGS_ID
-      );
-      if (!eventChannel || !eventChannel.isTextBased()) return;
-      const owner = await client.users.fetch(guild.ownerId);
+    const eventChannel = await client.channels.fetch(CHANNEL_LOGS_ID);
+    if (!eventChannel || !eventChannel.isTextBased()) return;
+    const owner = await client.users.fetch(guild.ownerId);
 
     const embed = new EmbedBuilder()
       .setColor("Yellow")
@@ -197,15 +193,12 @@ client.on("guildDelete", async (guild) => {
         },
       )
       .setTimestamp();
-      const channel = eventChannel as TextChannel;
-      await channel.send({ embeds: [embed] });
-      console.log(
-        `Sent leave message to event channel for guild ${guild.name}`
-      );
+    const channel = eventChannel as TextChannel;
+    await channel.send({ embeds: [embed] });
+    console.log(`Sent leave message to event channel for guild ${guild.name}`);
   } catch (error) {
     console.error("Error handling guildCreate event:", error);
   }
 });
 
 main();
-

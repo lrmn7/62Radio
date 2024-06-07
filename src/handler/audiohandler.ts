@@ -97,7 +97,9 @@ function play(guildId: string, resourceString: string): boolean {
 
   if (!playerMap.has(guildId)) {
     addAudioPlayer(guildId);
-    console.log(`Bot has joined the voice channel in guild ${guild?.name} / ${guildId}`);
+    console.log(
+      `Bot has joined the voice channel in guild ${guild?.name} / ${guildId}`,
+    );
   }
 
   let playerData = playerMap.get(guildId);
@@ -130,13 +132,12 @@ function pause(guildId: string): boolean {
   if (!playerData) return false;
 
   playerData.player.pause();
-  
+
   const guild = client.guilds.cache.get(guildId);
   console.log(`Player Pause in @ ${guild?.name} / ${guildId}`);
-  
+
   return true;
 }
-
 
 function unpause(guildId: string): boolean {
   if (!playerMap.has(guildId)) return false;
@@ -145,13 +146,12 @@ function unpause(guildId: string): boolean {
   if (!playerData) return false;
 
   playerData?.player.unpause();
-  
+
   const guild = client.guilds.cache.get(guildId);
   console.log(`Player Resume in @ ${guild?.name} / ${guildId}`);
 
   return true;
 }
-
 
 function stop(guildId: string): boolean {
   if (!playerMap.has(guildId)) return false;
