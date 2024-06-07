@@ -7,7 +7,7 @@ import {
   TextChannel
 } from "discord.js";
 import { config } from "dotenv";
-
+import audioHandler from './handler/audiohandler';
 console.log("Loading database handler...");
 import DatabaseHandler from "./handler/databasehandler";
 
@@ -40,7 +40,7 @@ const client = new Client({
     GatewayIntentBits.GuildVoiceStates,
   ],
 });
-
+audioHandler.setClient(client);
 async function main() {
   console.log("Connecting to database...");
   await DatabaseHandler.connectToDB(client)

@@ -7,8 +7,10 @@ import {
   joinVoiceChannel,
   VoiceConnection,
 } from "@discordjs/voice";
-import { InternalDiscordGatewayAdapterCreator } from "discord.js";
+import { Client, InternalDiscordGatewayAdapterCreator } from "discord.js";
 import DatabaseHandler from "./databasehandler";
+
+let client: Client; // Client declaration
 
 const playerMap = new Map<
   string,
@@ -18,6 +20,10 @@ const playerMap = new Map<
     resourceString: string | undefined;
   }
 >();
+
+function setClient(newClient: Client) {
+  client = newClient;
+}
 
 function addAudioPlayer(guild: string) {
   if (playerMap.has(guild)) return;
@@ -78,8 +84,20 @@ async function changeVolume(guildId: string, volume: number): Promise<boolean> {
 }
 
 function play(guildId: string, resourceString: string): boolean {
+  if (!client) {
+    console.log("Client is not initialized.");
+    return false;
+  }
+
+  const guild = client.guilds.cache.get(guildId);
+  if (!guild) {
+    console.log(`Guild with ID ${guildId} was not found.`);
+    return false;
+  }
+
   if (!playerMap.has(guildId)) {
     addAudioPlayer(guildId);
+    console.log(`Bot has joined the voice channel in guild ${guild?.name} / ${guildId}`);
   }
 
   let playerData = playerMap.get(guildId);
@@ -101,39 +119,52 @@ function play(guildId: string, resourceString: string): boolean {
   DatabaseHandler.ControlsData.findOne({ guild: guildId }).then(async (doc) => {
     await changeVolume(guildId, doc?.volume || 1);
   });
+  console.log(`Player Started in @ ${guild?.name} / ${guildId}`);
   return true;
 }
 
-function pause(guild: string): boolean {
-  if (!playerMap.has(guild)) return false;
+function pause(guildId: string): boolean {
+  if (!playerMap.has(guildId)) return false;
 
-  const playerData = playerMap.get(guild);
+  const playerData = playerMap.get(guildId);
   if (!playerData) return false;
 
   playerData.player.pause();
-
+  
+  const guild = client.guilds.cache.get(guildId);
+  console.log(`Player Pause in @ ${guild?.name} / ${guildId}`);
+  
   return true;
 }
 
-function unpause(guild: string): boolean {
-  if (!playerMap.has(guild)) return false;
 
-  const playerData = playerMap.get(guild);
+function unpause(guildId: string): boolean {
+  if (!playerMap.has(guildId)) return false;
+
+  const playerData = playerMap.get(guildId);
   if (!playerData) return false;
 
   playerData?.player.unpause();
+  
+  const guild = client.guilds.cache.get(guildId);
+  console.log(`Player Resume in @ ${guild?.name} / ${guildId}`);
 
   return true;
 }
 
-function stop(guild: string): boolean {
-  if (!playerMap.has(guild)) return false;
 
-  const playerData = playerMap.get(guild);
+function stop(guildId: string): boolean {
+  if (!playerMap.has(guildId)) return false;
+
+  const playerData = playerMap.get(guildId);
   if (!playerData) return false;
 
   playerData?.player.stop();
-  playerMap.delete(guild);
+  playerMap.delete(guildId);
+
+  const guild = client.guilds.cache.get(guildId);
+  console.log(`Player Stop in @ ${guild?.name} / ${guildId}`);
+
   return true;
 }
 
@@ -154,11 +185,12 @@ function connectToVoiceChannel(
 }
 
 export default {
-  play: play,
-  stop: stop,
-  pause: pause,
-  unpause: unpause,
-  getData: getData,
-  changeVolume: changeVolume,
-  connectToVoiceChannel: connectToVoiceChannel,
+  setClient,
+  play,
+  stop,
+  pause,
+  unpause,
+  getData,
+  changeVolume,
+  connectToVoiceChannel,
 };
